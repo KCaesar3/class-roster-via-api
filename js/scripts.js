@@ -5,6 +5,8 @@
 // Note: We're using NoCode API to make connecting to AirTable easier
 const url = "https://v1.nocodeapi.com/pmanikoth/airtable/rsqhQzAAKcMyyPPW?tableName=Roster";
 
+
+
 // Get data
 fetch(url)
   .then( response  => response.json())
@@ -35,5 +37,59 @@ fetch(url)
 
       // insert EACH `student` record into container
       gallery.insertAdjacentHTML("afterbegin", template);
-    });
+    }); 
+
+
+
+
+
+
+
+  // Data source
+const url = "https://picsum.photos/v2/list";
+
+fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
+  
+//   console.log( data );
+// // fisrst index
+//   console.log( data[0] );
+  
+// //   get first photographer name?
+//   console.log( data[0].author );
+//   //  Log out URL to image
+//   console.log( data[0].download_url );
+  
+  //  get name
+//   const author = document.querySelector('h3');
+//   //  get image
+//   const image = document.querySelector('img');
+  
+// //   Set it
+//   author.textContent = data[0].author;
+//   image.src = data[0].download_url;
+  
+  // Get Parent
+    const gallery = document.querySelector('.gallery');
+  
+//   CALL back fcntion
+  data.forEach( (image) => {
+   
+          let img = document.createElement('img');
+      
+      img.src = `${image.download_url}`;
+      
+      gallery.append(img);
+    
+  });
+  
+  
+});
+
+
+
+
+    
+
   });

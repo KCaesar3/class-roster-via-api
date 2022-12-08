@@ -1,1 +1,35 @@
-/* My Styles */
+body{
+  
+}
+
+h1{
+  color: grey;
+  font-weight: bold;
+  text-align: center;
+  padding: 2em;
+  
+}
+
+.gallery{
+  display: flex;
+  flex-direction: columns;
+  grid-template-columns: repeat(4, 1fr);
+  
+}
+
+h3{
+  color: orangered;
+}
+
+.gallery img{
+  display: flex;
+  width: 25em;
+  height: 25rem;
+  object-fit: cover;
+}
+
+figcaption{
+  color: green;
+  font-size: 2em;
+}
+
